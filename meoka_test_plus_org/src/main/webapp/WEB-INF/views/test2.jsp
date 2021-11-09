@@ -40,7 +40,7 @@ function createNewElement() {
 function test() {
 $('#newElementId').children().each(function(index, item){
 		console.log($(this).children(":first").attr("name", "recipeDetail[" + index + "].RECIPEDETAIL" ));
-		console.log($(this).children(":last").attr("name", "recipeDetail[" + index + "].PHOTO" ));
+		console.log($(this).children(":eq(1)").attr("name", "recipeDetail[" + index + "].PHOTO" ));
 		
 		//console.log($('#PHOTO').children(":first").attr("name", "recipeDetail[" + index + "].PHOTO" ));
 		
@@ -49,6 +49,8 @@ $('#newElementId').children().each(function(index, item){
 		//$('#newInputBox2').attr("name", "recipeDetail[" + index + "].PHOTO" )
 })
 }
+
+
 
 
 </script>
