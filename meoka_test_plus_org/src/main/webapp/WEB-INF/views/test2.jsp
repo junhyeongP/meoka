@@ -32,10 +32,15 @@ function createNewElement() {
 	var txtNewInputBox = document.createElement('div');
 	//var txtNewInputBox1 = document.createElement('div');
     // Then add the content (a new input box) of the element.
-	txtNewInputBox.innerHTML = "<input type='text' id='RECIPEDETAIL'><input type='text' id='PHOTO'>";
+	txtNewInputBox.innerHTML = "<input type='text' id='RECIPEDETAIL'><div class='form-group'><input type='hidden' name='PHOTO'><label for='exampleInputEmail1'>File DROP Here</label><div class='fileDrop'></div></div><div id='fileDrop' class='mailbox-attachments clearfix uploadedList'></div>";
 
     // Finally put it where it is supposed to appear.
 	document.getElementById("newElementId").appendChild(txtNewInputBox);
+	$('#newElementId').children().each(function(index, item){
+		console.log($(this).children(":first").attr("name", "recipeDetail[" + index + "].RECIPEDETAIL" ));
+		console.log($(this).children(":eq(1)").children(":first").attr("name", "recipeDetail[" + index + "].PHOTO" ));
+	})
+		
 }
 function test() {
 $('#newElementId').children().each(function(index, item){

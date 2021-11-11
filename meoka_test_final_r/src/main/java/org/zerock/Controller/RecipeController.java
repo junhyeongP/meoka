@@ -205,10 +205,14 @@ public class RecipeController {
 	// 게시물 삭제
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String getDelete(@RequestParam("RECIPENO") int recipeno,ValuationVO vo) throws Exception {
-		
-		System.out.println("recipeno******"+vo.getRecipeno());
 		service2.deleteRecipeValuation(recipeno);
 		System.out.println("delete 1*******************");
+		
+		serviceUtensil.deleteUtensil(recipeno);
+		
+		serviceIngredient.deletelIngredient(recipeno);
+		
+		System.out.println("recipeno******"+vo.getRecipeno());
 		service.deleteRecipeDetail(recipeno);
 		System.out.println("delete 2******************");
 
